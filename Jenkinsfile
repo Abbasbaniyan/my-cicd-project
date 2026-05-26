@@ -11,13 +11,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker build -t myapp .'
+                sh 'docker build -t myapp .'
             }
         }
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 9091:80 --name mycontainer myapp'
+                sh 'docker run -d -p 9091:80 --name mycontainer myapp'
             }
         }
 
